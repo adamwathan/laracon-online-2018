@@ -1,9 +1,11 @@
 <template>
   <div class="tags-input">
-    <span v-for="tag in tags" class="tags-input-tag">
-      <span>{{ tag }}</span>
-      <button type="button" class="tags-input-remove" @click="removeTag(tag)">&times;</button>
-    </span>
+
+    <slot name="tag" v-for="tag in tags"
+      :tag="tag"
+      :remove-tag="removeTag"
+    ></slot>
+
     <input class="tags-input-text" placeholder="Add tag..."
       @keydown.backspace="handleTagBackspace"
       @keydown.enter.prevent="addTag"
