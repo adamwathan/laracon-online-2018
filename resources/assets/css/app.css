@@ -1,0 +1,91 @@
+@tailwind preflight;
+
+h1 {
+  @apply .font-semibold .text-2xl .text-grey-darker;
+}
+
+.grid-row {
+  @apply .flex .flex-wrap .-mx-4;
+}
+
+.grid-col {
+  @apply .px-4;
+}
+
+.card {
+  @apply .bg-white .rounded-lg .shadow-lg .p-8;
+}
+
+.form-label {
+  @apply .block .font-bold .text-grey-dark .text-sm .mb-2;
+}
+
+.text-input {
+  @apply .bg-white .border .rounded .px-4 .py-3 .w-full;
+
+  &:focus {
+    @apply .outline-0;
+  }
+}
+
+.select-input {
+  @apply .appearance-none .bg-white .border .rounded .px-4 .py-3 .w-full;
+
+  background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%238795a1' d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z'/%3E%3C/svg%3E") no-repeat right .75rem center;
+  background-size: 1rem;
+
+  &:focus {
+    @apply .outline-0;
+  }
+}
+
+.tags-input {
+  @apply .flex .flex-wrap .bg-white .border .rounded .pl-2 .pr-4 .pt-2 .pb-1;
+}
+
+.tags-input-tag {
+  @apply .inline-flex .leading-none .items-center .text-sm .bg-blue-lighter .text-blue-darker .rounded .select-none .p-1 .mr-2 .mb-1;
+
+  &:last-of-type {
+    @apply .mr-0;
+  }
+}
+
+.tags-input-remove {
+  @apply .text-blue-dark .text-lg .leading-none;
+
+  &:first-child {
+    @apply .mr-1;
+  }
+
+  &:last-child {
+    @apply .ml-1;
+  }
+
+  &:focus {
+    @apply .outline-0;
+  }
+}
+
+.tags-input-text {
+  @apply .flex-1 .outline-0 .py-1 .ml-2 .mb-1;
+  min-width: 10rem;
+}
+
+.btn {
+  @apply .font-semibold .rounded .px-6 .py-3 .shadow-md;
+}
+
+.btn-primary {
+  @apply .text-white .bg-indigo;
+
+  &:hover {
+    @apply .bg-indigo-light;
+  }
+}
+
+@tailwind utilities;
+
+.outline-0 {
+  outline: 0;
+}
