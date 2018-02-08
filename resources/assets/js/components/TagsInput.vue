@@ -1,14 +1,10 @@
 <template>
-  <div class="tags-input">
-
-    <slot name="tag" v-for="tag in tags"
-      :tag="tag"
-      :remove-tag="removeTag"
-    ></slot>
-
-    <slot name="input"
-      :bindings="{ value: this.newTag }"
-      :eventHandlers="{
+  <div>
+    <slot
+      :tags="tags"
+      :removeTag="removeTag"
+      :inputBindings="{ value: this.newTag }"
+      :inputEventHandlers="{
         input: (e) => { this.newTag = e.target.value },
         keydown: (e) => {
           if (e.keyCode === 8) {
@@ -21,7 +17,6 @@
         }
       }"
     ></slot>
-
   </div>
 </template>
 
