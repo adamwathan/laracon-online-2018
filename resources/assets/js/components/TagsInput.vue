@@ -1,25 +1,3 @@
-<template>
-  <div>
-    <slot
-      :tags="tags"
-      :removeTag="removeTag"
-      :inputBindings="{ value: this.newTag }"
-      :inputEventHandlers="{
-        input: (e) => { this.newTag = e.target.value },
-        keydown: (e) => {
-          if (e.keyCode === 8) {
-            this.handleTagBackspace()
-          }
-          if (e.keyCode === 13) {
-            e.preventDefault()
-            this.addTag()
-          }
-        }
-      }"
-    ></slot>
-  </div>
-</template>
-
 <script>
   export default {
     model: {
@@ -49,6 +27,25 @@
       removeTag(tag) {
         this.$emit('update', this.tags.filter(t => t !== tag))
       },
+    },
+    render() {
+      return this.$scopedSlots.default({
+        tags: this.tags,
+        removeTag: this.removeTag,
+        inputBindings: { value: this.newTag },
+        inputEventHandlers: {
+          input: (e) => { this.newTag = e.target.value },
+          keydown: (e) => {
+            if (e.keyCode === 8) {
+              this.handleTagBackspace()
+            }
+            if (e.keyCode === 13) {
+              e.preventDefault()
+              this.addTag()
+            }
+          }
+        }
+      })
     },
   }
 </script>
