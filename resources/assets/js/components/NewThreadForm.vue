@@ -12,21 +12,7 @@
     </div>
     <div class="mb-8">
       <label class="form-label">Tags</label>
-
-      <tags-input v-model="tags">
-        <div class="tags-input" slot-scope="{ tag, removeTag, inputBindings, inputEventHandlers }">
-          <span class="tags-input-tag" v-for="tag in tags">
-            <span>{{ tag }}</span>
-            <button type="button" class="tags-input-remove" @click="removeTag(tag)">&times;</button>
-          </span>
-
-          <input class="tags-input-text" placeholder="Add tag..."
-            v-on="inputEventHandlers"
-            v-bind="inputBindings"
-          >
-        </div>
-      </tags-input>
-
+      <inline-tags-input v-model="tags"></inline-tags-input>
     </div>
     <div class="mb-8">
       <label class="form-label">Tags</label>
