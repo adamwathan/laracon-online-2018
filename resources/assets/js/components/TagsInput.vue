@@ -6,11 +6,13 @@
       :remove-tag="removeTag"
     ></slot>
 
-    <input class="tags-input-text" placeholder="Add tag..."
-      @keydown.backspace="handleTagBackspace"
-      @keydown.enter.prevent="addTag"
-      v-model="newTag"
-    >
+    <slot name="input"
+      :new-tag="newTag"
+      :on-input="(e) => { newTag = e.target.value }"
+      :handle-tag-backspace="handleTagBackspace"
+      :add-tag="addTag"
+    ></slot>
+
   </div>
 </template>
 
