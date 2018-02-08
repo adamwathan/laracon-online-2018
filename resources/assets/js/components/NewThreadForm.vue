@@ -12,7 +12,14 @@
     </div>
     <div class="mb-8">
       <label class="form-label">Tags</label>
-      <tags-input v-model="tags"></tags-input>
+
+      <tags-input v-model="tags">
+        <span slot="tag" slot-scope="{ tag, removeTag }" class="tags-input-tag">
+          <span>{{ tag }}</span>
+          <button type="button" class="tags-input-remove" @click="removeTag(tag)">&times;</button>
+        </span>
+      </tags-input>
+
     </div>
     <div class="text-right">
       <button type="submit" class="btn btn-primary">Start Discussion</button>
