@@ -19,11 +19,9 @@
           <button type="button" class="tags-input-remove" @click="removeTag(tag)">&times;</button>
         </span>
 
-        <input slot="input" slot-scope="{ newTag, onInput, handleTagBackspace, addTag }" class="tags-input-text" placeholder="Add tag..."
-          @keydown.backspace="handleTagBackspace"
-          @keydown.enter.prevent="addTag"
-          :value="newTag"
-          @input="onInput"
+        <input slot="input" slot-scope="{ bindings, eventHandlers }" class="tags-input-text" placeholder="Add tag..."
+          v-on="eventHandlers"
+          v-bind="bindings"
         >
       </tags-input>
 

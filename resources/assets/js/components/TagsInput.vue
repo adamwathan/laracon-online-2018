@@ -7,10 +7,19 @@
     ></slot>
 
     <slot name="input"
-      :new-tag="newTag"
-      :on-input="(e) => { newTag = e.target.value }"
-      :handle-tag-backspace="handleTagBackspace"
-      :add-tag="addTag"
+      :bindings="{ value: this.newTag }"
+      :eventHandlers="{
+        input: (e) => { this.newTag = e.target.value },
+        keydown: (e) => {
+          if (e.keyCode === 8) {
+            this.handleTagBackspace()
+          }
+          if (e.keyCode === 13) {
+            e.preventDefault()
+            this.addTag()
+          }
+        }
+      }"
     ></slot>
 
   </div>
