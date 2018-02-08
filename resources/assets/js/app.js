@@ -18,6 +18,7 @@ window.Vue = require('vue');
 Vue.component('new-thread-form', require('./components/NewThreadForm.vue'));
 Vue.component('tags-input', require('./components/TagsInput.vue'));
 Vue.component('inline-tags-input', require('./components/InlineTagsInput.vue'));
+Vue.component('stacked-tags-input', require('./components/StackedTagsInput.vue'));
 
 const app = new Vue({
     el: '#app'
