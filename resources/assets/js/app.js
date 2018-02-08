@@ -15,6 +15,9 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('new-thread-form', require('./components/NewThreadForm.vue'));
+Vue.component('tags-input', require('./components/TagsInput.vue'));
+
 const app = new Vue({
     el: '#app'
 });
